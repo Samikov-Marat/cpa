@@ -15,7 +15,7 @@ class Parser
     {
         $json = file_get_contents($this->url);
         $banners = json_decode($json);
-
+        BannerAdapter::clear();
         foreach ($banners as $banner) {
             BannerAdapter::save($banner);
         }

@@ -12,6 +12,12 @@ class BannerRepository
     var $trafficSource;
     var $kpi;
 
+    public function clear(){
+        Group::deleteAll();
+        TrafficSource::deleteAll();
+        Kpi::deleteAll();
+    }
+
     public function findOrNewGroup($old_id, $name)
     {
         $group = Group::find()

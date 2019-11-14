@@ -11,4 +11,19 @@ class Kpi extends ActiveRecord
         return '{{kpi}}';
     }
 
+
+    public function getGroup()
+    {
+        return $this->hasOne(Group::class, ['id' => 'group_id']);
+    }
+
+    public function getGroupName()
+    {
+        return $this->group->name;
+    }
+    public function attributeLabels() {
+        return [
+            'groupName' => 'Group Name',
+        ];
+    }
 }

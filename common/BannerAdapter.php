@@ -4,6 +4,12 @@ namespace app\common;
 
 class BannerAdapter
 {
+
+    public static  function clear(){
+        $repository = new BannerRepository();
+        $repository->clear();
+    }
+
     public static function save($bannerRaw)
     {
         $repository = new BannerRepository();
