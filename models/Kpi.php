@@ -43,12 +43,33 @@ class Kpi extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'group_id' => 'Group ID',
-            'traffic_source_id' => 'Traffic Source ID',
+            'groupName' => 'Group',
+            'trafficSourceName' => 'Traffic Source',
             'clicks' => 'Clicks',
             'leads' => 'Leads',
             'revenue' => 'Revenue',
             'event_2' => 'Event 2',
         ];
     }
+
+    public function getGroup()
+    {
+        return $this->hasOne(Group::class, ['id' => 'group_id']);
+    }
+
+    public function getGroupName()
+    {
+        return $this->group->name;
+    }
+
+    public function getTrafficSource()
+    {
+        return $this->hasOne(TrafficSource::class, ['id' => 'traffic_source_id']);
+    }
+
+    public function getTrafficSourceName()
+    {
+        return $this->trafficSource->name;
+    }
+
 }

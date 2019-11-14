@@ -21,6 +21,14 @@ $dataProvider = new ActiveDataProvider([
         <?=
         GridView::widget([
             'dataProvider' => $dataProvider,
+            'columns' => [
+                'groupName',
+                'trafficSourceName',
+                'clicks',
+                'leads',
+                'revenue',
+                'event_2',
+            ],
         ]);
         ?>
 
