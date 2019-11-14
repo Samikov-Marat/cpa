@@ -2,6 +2,7 @@
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
+$mailer = require __DIR__ . '/common_mailer.php';
 
 $config = [
     'id' => 'basic-console',
@@ -14,6 +15,7 @@ $config = [
         '@tests' => '@app/tests',
     ],
     'components' => [
+        'mailer' => $mailer,
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
